@@ -1,13 +1,3 @@
-﻿variable "region" {
-  type        = string
-  description = "AWS region for this environment"
-  default     = "eu-west-1"
-}
-variable "env" {
-  type        = string
-  description = "Environment name"
-  default     = "dev"
-}
 variable "name_prefix" {
   type        = string
   description = "Naming prefix for resources"
@@ -15,7 +5,9 @@ variable "name_prefix" {
 }
 
 provider "aws" {
-  region = var.region
+  region  = var.region
+  profile = var.profile
+
   default_tags {
     tags = {
       Project     = "nimbus-vault"
