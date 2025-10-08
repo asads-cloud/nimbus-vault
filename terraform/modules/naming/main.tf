@@ -12,7 +12,7 @@ variable "env" {
   }
 }
 variable "region" {
-  description = "AWS region (e.g., eu-west-2)"
+  description = "AWS region (e.g., eu-west-1)"
   type        = string
 }
 
