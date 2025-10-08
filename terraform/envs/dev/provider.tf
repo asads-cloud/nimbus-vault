@@ -1,7 +1,7 @@
 variable "name_prefix" {
   type        = string
   description = "Naming prefix for resources"
-  default     = "vault"
+  default     = "nimbus"
 }
 
 provider "aws" {

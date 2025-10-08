@@ -47,8 +47,15 @@ module "kms" {
 }
 
 
+#------------ CLOUDTRAIL MODULE -----------------------------
 
-
+module "cloudtrail" {
+  source                   = "../../modules/cloudtrail"
+  env                      = var.env
+  bucket_name              = local.buckets.audit
+  kms_key_alias_for_bucket = module.kms.key_arns["audit"] # <-- pass ARN
+  trail_name               = "nimbus-trail-${var.env}"
+}
 
 
 
