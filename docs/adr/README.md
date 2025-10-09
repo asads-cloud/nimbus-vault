@@ -11,15 +11,16 @@
 - [ADR-0007: CloudTrail Audit Logging & Integrity Controls](0007-cloudtrail-audit-logging.md)
 - [ADR-0008: AWS Config Baseline & Continuous Compliance](0008-aws-config-baseline.md)
 - [ADR-0009: GuardDuty Threat Detection (S3 Anomaly Monitoring)](0009-guardduty-threat-detection.md)
+- [ADR-0010: Security Hub Central Compliance & Posture Management](0010-securityhub-central-compliance.md)
 
 ## Conventions
 
 - **One ADR per decision.** Never edit history — add *superseding ADRs* if decisions change.  
 - **Status flow:** Proposed → Accepted → Superseded.  
 - **Scope:** Each ADR should be concise but complete, capturing **Context, Decision, Consequences, and Alternatives**.  
-- **Reference linkage:** Later ADRs (e.g., ADR-0009) may build upon earlier ones (e.g., ADR-0007 and ADR-0008).  
+- **Reference linkage:** Later ADRs (e.g., ADR-0010) may build upon earlier ones (e.g., ADR-0008 and ADR-0009).  
 - **Language:** Use clear, declarative, and implementation-focused phrasing.  
 
 ---
 
-_Last updated: 2025-10-09_
+_Last updated: 2025-10-10_

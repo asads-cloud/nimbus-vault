@@ -80,8 +80,15 @@ module "guardduty" {
 }
 
 
+#------------ SECURITYHUB MODULE -----------------------------
 
-
+module "securityhub" {
+  source      = "../../modules/securityhub"
+  env         = var.env
+  enable_fsbp = true
+  enable_cis  = true
+  cis_version = "1.4.0" 
+}
 
 
 
