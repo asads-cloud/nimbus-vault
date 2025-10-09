@@ -59,6 +59,31 @@ module "cloudtrail" {
 
 
 
+#------------ CONFIG MODULE -----------------------------
+
+module "config" {
+  source                    = "../../modules/config"
+  env                       = var.env
+  delivery_bucket_name      = local.buckets.audit
+  delivery_bucket_kms_alias = module.kms.key_arns["audit"]
+  delivery_prefix           = "config"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Placeholder root; modules will be wired here in next steps.
 

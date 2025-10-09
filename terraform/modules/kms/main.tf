@@ -57,6 +57,25 @@ locals {
       }
     }
   }]
+
+  # Allow AWS Config to encrypt objects written to S3 with this key (audit bucket)
+  config_statement = [{
+    Sid      = "AllowAWSConfigUseOfKey"
+    Effect   = "Allow"
+    Principal = { Service = "config.amazonaws.com" }
+    Action   = [
+      "kms:Encrypt",
+      "kms:GenerateDataKey*",
+      "kms:DescribeKey"
+    ]
+    Resource = "*"
+    Condition = {
+      StringEquals = {
+        "kms:ViaService" = "s3.${data.aws_region.current.name}.amazonaws.com"
+      }
+    }
+  }]
+
 }
 
 # --- Create one CMK per key_map entry ---
@@ -71,7 +90,7 @@ resource "aws_kms_key" "cmk" {
     Statement = concat(
       local.base_statements,
       local.additional_admin_statement,
-      each.key == "audit" ? local.cloudtrail_statement : []
+      each.key == "audit" ? concat(local.cloudtrail_statement, local.config_statement) : []
     )
   })
 }
