@@ -70,8 +70,14 @@ module "config" {
 }
 
 
+#------------ GUARDDUTY MODULE -----------------------------
 
-
+module "guardduty" {
+  source                       = "../../modules/guardduty"
+  env                          = var.env
+  finding_publishing_frequency = "FIFTEEN_MINUTES"
+  enable_s3_protection         = true
+}
 
 
 

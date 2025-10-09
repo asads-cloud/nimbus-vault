@@ -10,13 +10,14 @@
 - [ADR-0006: Custom KMS Key Policy & Modular Management](0006-kms-key-management.md)
 - [ADR-0007: CloudTrail Audit Logging & Integrity Controls](0007-cloudtrail-audit-logging.md)
 - [ADR-0008: AWS Config Baseline & Continuous Compliance](0008-aws-config-baseline.md)
+- [ADR-0009: GuardDuty Threat Detection (S3 Anomaly Monitoring)](0009-guardduty-threat-detection.md)
 
 ## Conventions
 
 - **One ADR per decision.** Never edit history — add *superseding ADRs* if decisions change.  
 - **Status flow:** Proposed → Accepted → Superseded.  
 - **Scope:** Each ADR should be concise but complete, capturing **Context, Decision, Consequences, and Alternatives**.  
-- **Reference linkage:** Later ADRs (e.g., ADR-0008) may build upon earlier ones (e.g., ADR-0007).  
+- **Reference linkage:** Later ADRs (e.g., ADR-0009) may build upon earlier ones (e.g., ADR-0007 and ADR-0008).  
 - **Language:** Use clear, declarative, and implementation-focused phrasing.  
 
 ---
