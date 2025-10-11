@@ -87,10 +87,20 @@ module "securityhub" {
   env         = var.env
   enable_fsbp = true
   enable_cis  = true
-  cis_version = "1.4.0" 
+  cis_version = "1.4.0"
 }
 
 
+#------------ VPC CORE MODULE -----------------------------
+
+module "vpc_core" {
+  source         = "../../modules/vpc_core"
+  vpc_cidr       = "10.70.0.0/16"
+  private_cidr_a = "10.70.1.0/24"
+  private_cidr_b = "10.70.2.0/24"
+  az_a           = "eu-west-1a"
+  az_b           = "eu-west-1b"
+}
 
 
 
