@@ -9,3 +9,7 @@ output "private_subnet_ids" {
 output "route_table_ids" {
   value = [aws_route_table.private_a.id, aws_route_table.private_b.id]
 }
+
+output "vpc_cidr" {
+  value = aws_vpc.this.cidr_block
+}

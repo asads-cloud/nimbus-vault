@@ -9,18 +9,21 @@
 - [ADR-0005: Environments (dev & prod)](0005-environments.md)
 - [ADR-0006: Custom KMS Key Policy & Modular Management](0006-kms-key-management.md)
 - [ADR-0007: CloudTrail Audit Logging & Integrity Controls](0007-cloudtrail-audit-logging.md)
-- [ADR-0008: AWS Config Baseline & Continuous Compliance](0008-aws-config-baseline.md)
-- [ADR-0009: GuardDuty Threat Detection (S3 Anomaly Monitoring)](0009-guardduty-threat-detection.md)
-- [ADR-0010: Security Hub Central Compliance & Posture Management](0010-securityhub-central-compliance.md)
-- [ADR-0011: VPC Core — Private-Only Network (dev)](0011-vpc-core-private-network.md)
+- [ADR-0008: AWS Config Baseline (Encryption, Public-Block, MFA Delete)](0008-config-baseline.md)
+- [ADR-0009: GuardDuty Continuous Threat Detection](0009-guardduty-threat-detection.md)
+- [ADR-0010: Security Hub Standards Enablement](0010-securityhub-standards.md)
+- [ADR-0011: VPC Core Network Baseline (Private Subnets, Routes, CIDRs)](0011-vpc-core-network-baseline.md)
+- [ADR-0012: VPC Endpoints for Private AWS Service Access](0012-vpc-endpoints-private-access.md)
+
+---
 
 ## Conventions
 
 - **One ADR per decision.** Never edit history — add *superseding ADRs* if decisions change.  
 - **Status flow:** Proposed → Accepted → Superseded.  
 - **Scope:** Each ADR should be concise but complete, capturing **Context, Decision, Consequences, and Alternatives**.  
-- **Reference linkage:** Later ADRs (e.g., ADR-0011) may build upon earlier ones (e.g., ADR-0007/0008/0009).  
-- **Language:** Use clear, declarative, and implementation-focused phrasing.  
+- **Reference linkage:** Later ADRs (e.g., ADR-0012) may build upon earlier ones (e.g., ADR-0011).  
+- **Language:** Use clear, declarative, and implementation-focused phrasing.
 
 ---
 

@@ -102,18 +102,14 @@ module "vpc_core" {
   az_b           = "eu-west-1b"
 }
 
+#------------ VPC ENDPOINTS MODULE -----------------------------
 
-
-
-
-
-
-# Placeholder root; modules will be wired here in next steps.
-
-# Example: we’ll add child modules like:
-# module "kms" { source = "../../modules/kms"; environment = var.environment; aws_region = var.aws_region }
-# module "cloudtrail" { ... }
-# module "config" { ... }
-# module "guardduty" { ... }
-# module "securityhub" { ... }
-# module "vpc_endpoints" { ... }
+module "vpc_endpoints" {
+  source                = "../../modules/vpc_endpoints"
+  env                   = var.env
+  vpc_id                = module.vpc_core.vpc_id
+  private_subnet_ids    = module.vpc_core.private_subnet_ids
+  route_table_ids       = module.vpc_core.route_table_ids
+  allowed_cidrs         = [module.vpc_core.vpc_cidr]
+  create_security_group = true
+}
